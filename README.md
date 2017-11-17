@@ -8,11 +8,11 @@ a vue2.0 plugin
 </pre>
 
 * main.js To Use
-#### import Vue form 'vue'
-#### import Toast from 'vue-message'
+    import Vue form 'vue'
+    import Toast from 'vue-message'
 
-#### Vue.use(Toast, {text: 'Hello world', duration: 3000, background: 'rgba(7,17,27,0.6)'})
+    Vue.use(Toast, {text: 'Hello world', duration: 3000, background: 'rgba(7,17,27,0.6)'})
 
 * .vue To Use
-#### this.$toast('你好')    //  string  or object
+    this.$toast('你好')    //  string  or object
 
