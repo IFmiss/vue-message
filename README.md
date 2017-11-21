@@ -23,3 +23,7 @@ a vue2.0 plugin
 
   # 1.2.0 +   ===>  $msg
   # 1.2.0 -   ===>  $toast
+
+
+  1.2.1 
+  update readme
