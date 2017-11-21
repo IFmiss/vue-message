@@ -1,14 +1,27 @@
 <template>
-	<div></div>
+	<transition name=fade-up>
+		<!-- <div class="vue-Message ' + opt.position + '" style="background:' + opt.background + '" v-show="isShow"> -->
+	</transition>
 </template>
 
 <script>
   export default {
+  	name: 'Vue-Message',
+  	data () {
+  		return {
+			text: 'Hello World',	// 默认文案
+			position: 'bottom',   // 默认显示位置
+			duration: 3000,     // 持续时间
+			background: 'rgba(7,17,27,0.8)'   // 默认背景色
+  		}
+  	},
+  	mounted () {
+  	}
   }
 </script>
 
 <style lang="scss">
-	.vue-toast{
+	.vue-Message{
 		position:fixed;
 		background:rgba(0,0,0,0.3);
 		font-size:14px;
