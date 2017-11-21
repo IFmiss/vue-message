@@ -1,63 +1,75 @@
-import MyToast from './toast.vue'
+import MyMessage from './message.vue'
 
-const Toast = {
-	showToast: false,
-	showToastNew: null,
+const Message = {
+	showMessage: false,
+	showMessageNew: null,
 	time: null,  	// 定时器
 	install (Vue, options) {
 		if (typeof window !== 'undefined' && window.Vue) {
 			Vue = window.Vue
 		}
-		Vue.component('Toast', MyToast)
+		Vue.component('Message', MyMessage)
 
-		Vue.prototype.$toast = (obj, callBack) => {
-			let opt = {
-				text: 'Hello World',	// 默认文案
-				position: 'bottom',   // 默认显示位置
-				duration: 3000,     // 持续时间
-				background: 'rgba(7,17,27,0.8)'   // 默认背景色
-			}
+		Vue.prototype.$msg = (obj, callBack) => {
+			let opt = MyMessage.data()
 
+			// 这是在main.js时 将用户use的配置写入  覆盖掉默认配置   但这不是最高的配置信息
 			for (let property in options) {
 				opt[property] = options[property]  // 使用 options 的配置
 			}
 
-			if (typeof obj !== Object) {
-				opt.text = obj ? obj || 'Hello World' : options.text || opt.text
+			// 如果$msg 中没有参数就设置默认的参数信息
+			if (!obj instanceof Object) {
+				// alert(JSON.stringify(opt))
+				// opt.text = obj ? obj : (options ? options.text : opt.text)
+				if (obj) {
+					opt.text = obj
+				} else {
+					for (let property in obj) {
+						opt[property] = obj[property]
+					}
+				}
+			} else {
+				if (typeof obj === 'string') {
+					opt.text = obj
+				} else {
+					// 这是选择优先级最高的参数当最终的参数信息
+					for (let property in obj) {
+						opt[property] = obj[property]  // 使用 obj  自己在$msg事实 的配置
+					}
+				}
 			}
-
-			for (let property in obj) {
-				opt[property] = obj[property]  // 使用 options 的配置
+			if (Message.showMessage || Message.showMessageNew) {
+				// 如果Message还在，则先删除前一个Message 的信息以及定时器  并充值默认信息
+				clearTimeout(Message.time)
+				Message.showMessage = false
+				document.body.removeChild(Message.showMessageNew.$mount().$el)
+				Message.showMessageNew = null
 			}
-
-			if (Toast.showToast || Toast.showToastNew) {
-				// 如果toast还在，则不再执行
-				clearTimeout(Toast.time)
-				Toast.showToast = false
-				document.body.removeChild(Toast.showToastNew.$mount().$el)
-				Toast.showToastNew = null
-			}
-			if (!Toast.showToastNew) {
-				let ToastT = Vue.extend({     // 1、创建构造器，定义好提示信息的模板
-					template: '<transition name=fade-up><div class="vue-toast ' + opt.position + '" style="background:' + opt.background + '" v-show="isShow">' + opt.text + '<toast></toast></div></transition>',
+			if (!Message.showMessageNew) {
+				// 创建构造器，定义好提示信息的模板
+				let MessageT = Vue.extend({
+					template: '<transition name=fade-up><div class="vue-Message ' + opt.position + '" style="background:' + opt.background + '" v-show="isShow">' + opt.text + '<Message></Message></div></transition>',
 					data () {
 						return {
-							isShow: Toast.showToast
+							isShow: Message.showMessage
 						}
 					}
 				})
-				Toast.showToastNew = new ToastT()  // 2、创建实例，挂载到文档以后的地方
-				let tpl = Toast.showToastNew.$mount().$el
+				// 创建实例，挂载到文档以后的地方
+				Message.showMessageNew = new MessageT()
+				let tpl = Message.showMessageNew.$mount().$el
 				document.body.appendChild(tpl)
-				Toast.showToastNew.isShow = Toast.showToast = true
+				Message.showMessageNew.isShow = Message.showMessage = true
 			}
-			Toast.time = setTimeout(function () {
-				Toast.showToastNew.isShow = Toast.showToast = false
+
+			Message.time = setTimeout(function () {
+				Message.showMessageNew.isShow = Message.showMessage = false
+				if (typeof callBack === 'function') {
+					callBack()
+				}
 			}, opt.duration)
-			if (typeof callBack === 'function') {
-				callBack()
-			}
 		}
 	}
 }
-export default Toast
+export default Message

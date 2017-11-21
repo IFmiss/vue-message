@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import VueMessage from './lib/toast.js'
-Vue.use(VueMessage, {text: 'aaa'})
+import VueMessage from './lib/index.js'
+Vue.use(VueMessage)
 
 new Vue({
   el: '#app',
