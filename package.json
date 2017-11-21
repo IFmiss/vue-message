@@ -1,7 +1,7 @@
 {
   "name": "vue-message",
-  "description": "A Vue.js project",
-  "version": "1.1.5",
+  "description": "A prompt component based on vue2.0",
+  "version": "1.2.0",
   "author": "daiwei <185098535@qq.com>",
   "license": "MIT",
   "private": false,
@@ -21,7 +21,8 @@
     "vue",
     "toast",
     "code",
-    "vue plugin"
+    "vue plugin",
+    "vue-message"
   ],
   "browserslist": [
     "> 1%",
