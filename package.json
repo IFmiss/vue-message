@@ -1,7 +1,7 @@
 {
   "name": "vue-message",
   "description": "A prompt component based on vue2.0",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "daiwei <185098535@qq.com>",
   "license": "MIT",
   "private": false,
@@ -37,6 +37,7 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.0.5",

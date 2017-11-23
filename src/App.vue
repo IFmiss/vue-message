@@ -86,6 +86,8 @@ body,html{
   font-weight: lighter;
   font-size: 10px;
   overflow:hidden;
+  margin:0;
+  padding:0;
 }
 
 h1, h2 {
