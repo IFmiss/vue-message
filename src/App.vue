@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 class="title">Vue-message</h1>
     <button @click="defaultMsg">默认提示</button>
     <button @click="zMsg">自定义提示</button>
     <button @click="bgMsg">背景改变提示</button>
@@ -7,6 +8,7 @@
     <button @click="topMsg">显示位置Top</button>
     <button @click="centerMsg">显示位置Center</button>
     <button @click="callbackMsg">msg消失之后的回调</button>
+    <p class="link_code"><a href="http://www.github.com/ifmiss/vue-message" target="_black">http://www.github.com/ifmiss/vue-message</a></p>
   </div>
 </template>
 
@@ -23,7 +25,7 @@ export default {
       this.$msg()
     },
     bgMsg () {
-      this.$msg({background:'radial-gradient(rgba(4,12,6,0.3), #F1DCAB);'})
+      this.$msg({background:'radial-gradient(#41C3D0, #1CD980);',text: '我改变了背景色了哈哈哈，还是渐变色哦!'})
     },
     zMsg () {
       this.$msg('你好  你好啊!')
@@ -35,11 +37,11 @@ export default {
       this.$msg({position: 'top'})
     },
     centerMsg () {
-      this.$msg({position: 'center'})
+      this.$msg({position: 'center',background: '#000'})
     },
     callbackMsg () {
       this.$msg({position: 'center', duration: 1000}, () => {
-        alert('这是Vue-Message结束之后的回调')
+        this.$msg('这是Vue-Message结束之后的回调,在前一个msg消失的时候触发')
       })
     }
   }
@@ -72,7 +74,23 @@ button{
   }
 }
 
+.link_code{
+  margin-top: 30px;
+  a{
+    font-size: 16px;
+    color:#eee;
+  }
+}
+
+.title{
+  font-size:38px;
+  font-weight:600;
+  color:#f0f0f0;
+  margin:-30px auto 50px auto;
+}
+
 body,html{
+  user-select:none;
   min-width: 100vw;
   min-height: 100vh;
   display: -webkit-box;

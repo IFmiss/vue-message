@@ -1,6 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+// var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/lib/index.js',
@@ -113,7 +113,8 @@ if (process.env.NODE_ENV === 'production') {
     // new HtmlWebpackPlugin({
     //   filename: 'index.html',
     //   template: 'index.html',
-    //   inject: true
+    //   inject: true,
+    //   favicon: 'src/favicon/favicon.ico'
     // })
   ])
 }
