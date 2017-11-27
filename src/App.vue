@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <h1 class="title">Vue-message</h1>
-    <button @click="defaultMsg">默认提示</button>
-    <button @click="zMsg">自定义提示</button>
-    <button @click="bgMsg">背景改变提示</button>
-    <button @click="durMsg">时长控制</button>
-    <button @click="topMsg">显示位置Top</button>
-    <button @click="centerMsg">显示位置Center</button>
-    <button @click="callbackMsg">msg消失之后的回调</button>
-    <p class="link_code"><a href="http://www.github.com/ifmiss/vue-message" target="_black">http://www.github.com/ifmiss/vue-message</a></p>
+    <div class="content">
+      <h1 class="title">Vue-message</h1>
+      <button @click="defaultMsg">默认提示</button>
+      <button @click="zMsg">自定义提示</button>
+      <button @click="bgMsg">背景改变提示</button>
+      <button @click="durMsg">时长控制</button>
+      <button @click="topMsg">显示位置Top</button>
+      <button @click="centerMsg">显示位置Center</button>
+      <button @click="callbackMsg">msg消失之后的回调</button>
+      <p class="link_code"><a href="http://www.github.com/ifmiss/vue-message" target="_black">http://www.github.com/ifmiss/vue-message</a></p>
+    </div>
   </div>
 </template>
 
@@ -55,9 +57,23 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  // margin-top: 60px;
+  user-select:none;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);
+  background: linear-gradient(to right, #EF629F, #EECDA3);
+  font-weight: lighter;
+  font-size: 10px;
+  margin:0;
+  padding:0;
+}
+
+.content{
   width:100%;
-  height:100%;
+  height:auto;
+  position:absolute;
+  top:50%;
+  transform:translate(0,-50%);
 }
 
 button{
@@ -93,17 +109,6 @@ body,html{
   user-select:none;
   min-width: 100vw;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);
-  background: linear-gradient(to right, #EF629F, #EECDA3);
-  font-weight: lighter;
-  font-size: 10px;
-  overflow:hidden;
   margin:0;
   padding:0;
 }

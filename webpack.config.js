@@ -1,10 +1,10 @@
 var path = require('path')
 var webpack = require('webpack')
-// var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/lib/index.js',
-  // entry: './src/main.js',
+  // entry: './src/lib/index.js',
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '',
@@ -109,12 +109,12 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+      inject: true,
+      favicon: 'src/favicon/favicon.ico'
     })
-    // new HtmlWebpackPlugin({
-    //   filename: 'index.html',
-    //   template: 'index.html',
-    //   inject: true,
-    //   favicon: 'src/favicon/favicon.ico'
-    // })
   ])
 }
