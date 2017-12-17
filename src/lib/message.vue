@@ -28,7 +28,7 @@
 		color:#fff;
 		line-height:1.5;
 		padding: 6px 12px;
-		width:auto;
+		width:max-content;
 		border-radius:8px;
 		max-width:300px;
 		display:inline-block;
@@ -70,6 +70,15 @@
 		&.fade-up-leave-to{
 			opacity: 0;
 		}
-			
+	}
+	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+		.vue-Message{
+			max-width:600px;
+		}
+	}
+	@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
+		.vue-Message{
+			max-width:900px;
+		}
 	}
 </style>
