@@ -30,12 +30,13 @@
 		padding: 6px 12px;
 		width:max-content;
 		border-radius:8px;
-		max-width:300px;
+		max-width: 414px;
 		display:inline-block;
 		user-select: none;
 		word-wrap: break-word;
 		opacity:1;
 		z-index: 10000000;
+		box-sizing:border-box;
 		cursor:default;
 		&.bottom{
 			bottom: 10%;
@@ -71,14 +72,23 @@
 			opacity: 0;
 		}
 	}
-	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+	@media screen and (max-width: 414px) {
 		.vue-Message{
-			max-width:600px;
+			max-width:375px;
 		}
 	}
-	@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
+
+	@media screen and (max-width: 375px) {
 		.vue-Message{
-			max-width:900px;
+			max-width:320px;
 		}
 	}
+
+	@media screen and (max-width: 321px) {
+		.vue-Message{
+			max-width:300px;
+		}
+	}
+
 </style>

@@ -1,7 +1,7 @@
 {
   "name": "vue-message",
   "description": "A prompt component based on vue2.0",
-  "version": "1.2.7",
+  "version": "1.2.9",
   "author": "daiwei <185098535@qq.com>",
   "license": "MIT",
   "private": false,
