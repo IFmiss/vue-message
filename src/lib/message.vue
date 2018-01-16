@@ -28,7 +28,7 @@
 		color:#fff;
 		line-height:1.5;
 		padding: 6px 12px;
-		width:max-content;
+		width:auto;
 		border-radius:8px;
 		max-width: 414px;
 		display:inline-block;
@@ -73,21 +73,9 @@
 		}
 	}
 
-	@media screen and (max-width: 414px) {
+	@media screen and (max-width: 500px) {
 		.vue-Message{
-			max-width:375px;
-		}
-	}
-
-	@media screen and (max-width: 375px) {
-		.vue-Message{
-			max-width:320px;
-		}
-	}
-
-	@media screen and (max-width: 321px) {
-		.vue-Message{
-			max-width:300px;
+			max-width:90%;
 		}
 	}
 
