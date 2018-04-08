@@ -1,5 +1,6 @@
 # vue-message
 A prompt component based on vue2.0
+QQ交流群： 424418160
 
 ## DEMO
   http://www.daiwei.org/components/vue-message
