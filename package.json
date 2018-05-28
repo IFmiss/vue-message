@@ -15,6 +15,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "hoek": "^5.0.3",
     "vue": "^2.4.4"
   },
   "keywords": [
