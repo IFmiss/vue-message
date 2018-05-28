@@ -33,7 +33,7 @@ export default {
       this.$msg('你好  你好啊!')
     },
     durMsg () {
-      this.$msg({text: '我设置了我设置了时长为1000ms我设置了时长为1000ms我设置了时长为1000ms时长为1000ms',duration: 1111000})
+      this.$msg({text: '我设置了我设置了时长为1000ms我设置了时长为1000ms我设置了时长为1000ms时长为1000ms',duration: 1000})
     },
     topMsg () {
       this.$msg({position: 'top'})

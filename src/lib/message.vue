@@ -23,46 +23,52 @@
 <style lang="scss">
 	.vue-Message{
 		position:fixed;
-		background:rgba(0,0,0,0.3);
-		font-size:14px;
-		color:#fff;
-		line-height:1.5;
-		padding: 6px 12px;
-		width:auto;
-		border-radius:8px;
-		max-width: 414px;
-		display:inline-block;
-		user-select: none;
-		word-wrap: break-word;
+		width:100%;
 		opacity:1;
 		z-index: 10000000;
-		box-sizing:border-box;
-		cursor:default;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.vue-Message-Detail{
+			cursor:default;
+			box-sizing:border-box;
+			display:inline-block;
+			user-select: none;
+			word-wrap: break-word;
+			width:auto;
+			max-width: 80%;
+			border-radius:8px;
+			font-size:14px;
+			color:#fff;
+			line-height:1.5;
+			padding: 6px 12px;
+		}
 		&.bottom{
 			bottom: 10%;
-			left:50%;
-			transform:translate(-50%,0);
+			left:0;
+			transform:translate(0,0);
 			&.fade-up-enter{
 				opacity: 0;
-				transform:translate(-50%,10px);
+				transform:translate(0,10px);
 			}
 		}
 		&.center{
 			top: 50%;
-			left:50%;
-			transform:translate(-50%,-50%);
+			left:0;
+			transform:translate(0,-50%);
 			&.fade-up-enter{
 				opacity: 0;
-				transform:translate(-50%,calc(-50% + 10px));
+				transform:translate(0,calc(-50% + 10px));
 			}
 		}
 		&.top{
 			top: 10%;
-			left:50%;
-			transform:translate(-50%,0);
+			left:0;
+			transform:translate(0,0);
 			&.fade-up-enter{
 				opacity: 0;
-				transform:translate(-50%,10px);
+				transform:translate(0,10px);
 			}
 		}
 		&.fade-up-enter-to,&.fade-up-leave-to{
@@ -72,11 +78,4 @@
 			opacity: 0;
 		}
 	}
-
-	@media screen and (max-width: 500px) {
-		.vue-Message{
-			max-width:90%;
-		}
-	}
-
 </style>

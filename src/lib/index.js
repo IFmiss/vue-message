@@ -49,7 +49,7 @@ const Message = {
 			if (!Message.showMessageNew) {
 				// 创建构造器，定义好提示信息的模板
 				let MessageT = Vue.extend({
-					template: '<transition name=fade-up><div class="vue-Message ' + opt.position + '" style="background:' + opt.background + '" v-show="isShow">' + opt.text + '<Message></Message></div></transition>',
+          template: '<transition name=fade-up><div class="vue-Message ' + opt.position + '" v-show="isShow"><div class="vue-Message-Detail" style="background:' + opt.background + '">' + opt.text + '</div><Message></Message></div></transition>',
 					data () {
 						return {
 							isShow: Message.showMessage
