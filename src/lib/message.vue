@@ -42,6 +42,7 @@
 			font-size:14px;
 			color:#fff;
 			line-height:1.5;
+			font-family: SourceHanSansCN-Regular;
 			padding: 6px 12px;
 		}
 		&.bottom{
